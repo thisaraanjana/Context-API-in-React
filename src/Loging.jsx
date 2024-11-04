@@ -4,11 +4,11 @@ import { useState } from "react";
 
 export default function Loging() {
   const [value, setValue] = useState("");
-  const {user,dispatch}=useContext(userContext);
-  function handleSubmit(e){
-   e.preventDefault();
-   //setUser(value)
-   dispatch({type:"login", payload:value});
+  const { user, dispatch } = useContext(userContext);
+  function handleSubmit(e) {
+    e.preventDefault();
+    //setUser(value)
+    dispatch({ type: "login", payload: value });
   }
   return (
     <div>
@@ -18,7 +18,7 @@ export default function Loging() {
           onChange={(e) => setValue(e.target.value)}
           type="text"
         />
-        <button type="submit">Login</button>
+        <button type="submit">Login here</button>
       </form>
     </div>
   );
