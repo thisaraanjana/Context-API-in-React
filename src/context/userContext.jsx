@@ -1,17 +1,17 @@
-import { createContext, useReducer} from "react";
+import { createContext, useReducer } from "react";
 const userContext = createContext();
-
-function UserProvider({children}) {
+//get ather pages using parent child relation
+function UserProvider({ children }) {
   // const [user, setUser] = useState("guest");
-  function userReducer(state,action){
-     if (action.type=="login"){
+  function userReducer(state, action) {
+    if (action.type == "login") {
       return action.payload;
-     }
-     if (action.type=="logout"){
+    }
+    if (action.type == "logout") {
       return action.payload;
-     }
+    }
   }
-  const[user,dispatch]=useReducer(userReducer,"");
+  const [user, dispatch] = useReducer(userReducer, "");
   return (
     <userContext.Provider value={{ user, dispatch }}>
       {children}
